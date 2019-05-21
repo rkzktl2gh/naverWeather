@@ -20,7 +20,7 @@ while(1):
          area=input()
          if area in naverWeather.map_cityNum:
             print(naverWeather(area).getWeather())
-else:
-    print("프로그램을 종료합니다.")
-    break
+ else:
+  print("프로그램을 종료합니다.")
+  break
 
