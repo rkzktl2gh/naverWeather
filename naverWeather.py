@@ -62,15 +62,18 @@ class naverWeather():
             }
 
     def __init__(self, area="서울"):
+        if area == '':
+            area = "서울" # 공백을 입력받았을 때 서울을 도시명으로 한다
         self.area = area
         self.addr = None
         self.result = None
-        
-        cityNum = naverWeather.map_cityNum[area]
-        if not cityNum:
-            print("도시명 잘못")
-            # 잘못된 도시명을 입력한 경우
+       
+        if area not in naverWeather.map_cityNum:
+            self.sorry()
             return
+        else:
+            cityNum = naverWeather.map_cityNum[area]
+        
         self.addr = naverWeather.addr + cityNum
         
         self.search()
@@ -93,6 +96,10 @@ class naverWeather():
                 + "\t오전 - " + t_ary[19] + "℃(" +  t_ary[21] + ", 강수확률 " + t_ary[23] + ")\n"
                 + "\t오후 - " + t_ary[25] + "℃(" +  t_ary[27] + ", 강수확률 " + t_ary[29] + ")\n"
                 )
+
+    def sorry(self):
+        print("재입력해주세요")
+        return
 
     def getWeather(self):
         if not self.result:
