@@ -40,4 +40,4 @@ while(1):
   print("프로그램을 종료합니다.")
   break
  else:
-     print("다시입력해주세요")
+     print("다시입력해주세요.")
