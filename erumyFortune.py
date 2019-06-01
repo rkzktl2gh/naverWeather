@@ -1,4 +1,4 @@
-import requests
+﻿import requests
 import datetime
 from bs4 import BeautifulSoup
 
@@ -7,7 +7,7 @@ APIUrl = 'http://www.erumy.com/free/todayFortuneReport.aspx'
 
 class Fortune:
 
-    def make_dict(self, soup) :
+    def make_dict(self, soup):
         tmpres = str(soup.select('label > ul')[0])
         today_fortune = tmpres[4:-5]
         tmpres = soup.select('div > font > label')[0]
