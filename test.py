@@ -1,5 +1,6 @@
 from naverWeather import *
 from room import *
+from erumyFortune import *
 
 while(1):
  print("\n<<<<<<<<<<<<<<<<<<<<<<<메뉴를 선택하세요.>>>>>>>>>>>>>>>>>>>>>>>")
@@ -10,14 +11,22 @@ while(1):
   area=input()
   if area in naverWeather.map_cityNum: # 올바른 도시명 입력 시
    print(naverWeather(area).getWeather())
+   erumyFortune.Fortune_1()
   elif area =='': # 공백 입력 시
    print(naverWeather("서울").getWeather())
+   erumyFortune.Fortune_1()
   else: # 잘못된 도시명 입력 시
    while(area not in naverWeather.map_cityNum):
     print("잘못된 도시명입니다. 다시 입력하세요")
     area=input()
     if area in naverWeather.map_cityNum:
       print(naverWeather(area).getWeather())
+      erumyFortune.Fortune_1()
+    elif area =='': # 공백 입력 시
+      print(naverWeather("서울").getWeather())
+      erumyFortune.Fortune_1()
+      break
+
  elif control == '2': # 2번 입력 시
   while(1):
       print("-------------------------------------------------")
