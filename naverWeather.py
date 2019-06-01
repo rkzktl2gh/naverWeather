@@ -89,12 +89,19 @@ class naverWeather():
         self.result = (
                 "["+ self.area + " 날씨 검색 결과]\n"
                 + "- 오늘(" + t_ary[3] + ")\n"
-                + "\t오전 - " + t_ary[7] + "℃(" +  t_ary[9] + ", 강수확률 " + t_ary[11] + ")\n"
-                + "\t오후 - " + t_ary[13] + "℃(" +  t_ary[15] + ", 강수확률 " + t_ary[17] + ")\n"
-                + "- 내일(" + t_ary[5] + ")\n"
-                + "\t오전 - " + t_ary[19] + "℃(" +  t_ary[21] + ", 강수확률 " + t_ary[23] + ")\n"
-                + "\t오후 - " + t_ary[25] + "℃(" +  t_ary[27] + ", 강수확률 " + t_ary[29] + ")\n"
+                + "[오전] - 온도 : " + t_ary[7] + "℃\n" + "\t 구름양 : " + t_ary[9] + "\n\t 강수확률 " + t_ary[11] + "\n"
+                + "[오후] - 온도 : " + t_ary[13] + "℃\n" + "\t 구름양 : " + t_ary[15] + "\n\t 강수확률 " + t_ary[17] + "\n"
                 )
+
+    def support_1(self):
+        naverWeather.session.encoding = 'utf-8'
+
+        req = naverWeather.session.get(self.addr)
+        soup = BeautifulSoup(req.text, "html.parser")
+        table = soup.find(class_="tbl_weather tbl_today3")
+
+        t_ary = list(table.stripped_strings)
+        return t_ary
 
     def getWeather(self):
         return self.result
