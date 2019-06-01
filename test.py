@@ -3,7 +3,7 @@ from room import *
 
 while(1):
  print("메뉴를 선택하세요.")
- print("1번 : 검색 | 2번 : 옷장 | 3번 : 종료")
+ print("1번 : 검색 | 2번 : 옷장 | 3번 : 옷장으로 코디해주기 | 4번 : 종료")
  control = input()
  if control == '1': # 1번 입력 시
   print("지역명을 입력해주세요.")
@@ -37,7 +37,9 @@ while(1):
           print("<<<<<<잘못입력하셨습니다. 다시입력해주세요>>>>>>")
           print("")
  elif control == '3': # 3번 입력 시
+
+ elif control == '4': # 4번 입력 시
   print("프로그램을 종료합니다.")
   break
  else:
-     print("다시입력해주세요.")
+     print("다시입력해주세요")
