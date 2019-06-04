@@ -25,6 +25,7 @@ while(1):
     elif area =='': # 공백 입력 시
       print(naverWeather("서울").getWeather())
       erumyFortune.fortune_5()
+      break
 
  elif control == '2': # 2번 입력 시
   while(1):
