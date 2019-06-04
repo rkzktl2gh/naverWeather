@@ -51,12 +51,16 @@ while(1):
    room.support(area)
   elif area =='': # 공백 입력 시
    print(naverWeather("서울").getWeather())
+   room.support(area)
   else: # 잘못된 도시명 입력 시
    while(area not in naverWeather.map_cityNum):
     print("잘못된 도시명입니다. 다시 입력하세요")
     area=input()
     if area in naverWeather.map_cityNum:
       print(naverWeather(area).getWeather())
+    elif area =='':
+      print(naverWeather("서울").getWeather())
+      room.support(area)
  elif control == '4': # 4번 입력 시
   print("프로그램을 종료합니다.")
   break
