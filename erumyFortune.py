@@ -48,12 +48,12 @@ class erumyFortune:
     def fortune_5():
         while(1):
             print("1번 : 오늘운세 확인 | 2번 : 종료")
-            check = input()
-            if check == '1':
+            check = int(input())
+            if check == 1:
                 print("생년월일을 띄어쓰기 하지 마시고 적어주세요")
                 date = int(input())
                 erumyFortune.fortune_4(date)
-            elif check =='2':
+            elif check == 2:
                 break
             else:
                 print("잘못입력하셨습니다. 다시입력해주세요\n")
